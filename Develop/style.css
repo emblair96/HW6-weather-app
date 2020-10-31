@@ -1,0 +1,14 @@
+.large-icon {
+    height: 70px;
+    width: 70px;
+}
+
+.small-icon {
+    height: 70px;
+    width: 70px;
+}
+
+.city-name {
+    display: inline;
+    position: relative;
+}
