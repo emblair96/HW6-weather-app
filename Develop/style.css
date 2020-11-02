@@ -6,9 +6,14 @@
 .small-icon {
     height: 70px;
     width: 70px;
+    border: none;
 }
 
 .city-name {
     display: inline;
     position: relative;
+}
+
+.uv-index {
+    background: red;
 }
