@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="Develop/style.css">
 </head>
 <body>
+
+<!-- Weather dashboard header -->
 <header>
     <h1 class="text-center bg-dark text-white p-3">Weather Dashboard</h1>
 </header>
+
 <section class="row">
+    
+<!-- Search sidebar -->
     <div class="col-md-3 bg-light mr-4">
         <h4 class="p-1">Search for a City:</h4>
         <form class="form-inline pl-1">
@@ -21,8 +26,10 @@
         <div class="search-history pt-5">
         </div>
     </div>
-    
+
+<!-- Weather data -->
     <div class="col-md-8">
+<!-- Current weather -->
         <div class="row card card-body">
             <div class="d-flex">
                 <h2 class="mt-3 city-image" id="cityName">City </h2>
@@ -33,6 +40,8 @@
             <p class="pt-2" id="currentWS">Wind Speed: </p>
             <p class="pt-2">UV Index: <span class="btn-danger btn-sm" id="uvIndex"></span></p>
         </div>
+
+<!-- 5-day weather forecast -->
        <div class="row mt-3">
             <h2>5-Day Forecast:</h2>
        </div>
@@ -69,7 +78,10 @@
             </div>
        </div>
     </div>
+
 </section>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="Develop/script.js"></script>

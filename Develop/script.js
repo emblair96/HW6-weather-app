@@ -9,12 +9,15 @@ $(".searchBtn").on("click", function() {
   event.preventDefault();
   var userSearch = $("#userSearch").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + userSearch + "&appid=d2ab85e5641867afdf5ea19703f5bbc4";
+   
 
-  // Append user search to sidebar
+  // Append user search to sidebar unless input field is left empty
+  if (userSearch !== "") {
   var userSearchP = $("<button>");
-  userSearchP.text(userSearch);
   userSearchP.addClass("btn btn-outline-secondary searchBtn");
+  userSearchP.text(userSearch);
   $(".search-history").append(userSearchP);
+  };
 
   // ajax call to get lat, lon, & city name; lat & lon needed for daily forecast api call
   $.ajax({
