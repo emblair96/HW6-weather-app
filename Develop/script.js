@@ -7,7 +7,7 @@ var searchHistoryArray = $(".searchBtn").toArray();
 var userSearchArray = [];
 
 
-
+// When the user clicks the "search button", generate weather data for that city
 $(".searchBtn").on("click", function() {
   event.preventDefault();
   userSearch = $("#userSearch").val();
@@ -16,12 +16,13 @@ $(".searchBtn").on("click", function() {
 
 })
 
-
+// Store the users last search to localStorage
 function storeLastSearch() {
   var userSearch = $("#userSearch").val();
   localStorage.setItem("lastSearch", JSON.stringify(userSearch));
 };
 
+// Post weather data for last userSearch to the page
 function init() {
   var userSearch = JSON.parse(localStorage.getItem("lastSearch"));
 
@@ -121,7 +122,7 @@ function getWeatherData(userSearch) {
     });
 
   });
-}
+};
 
 init();
 //getWeatherData(); 
