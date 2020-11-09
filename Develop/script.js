@@ -20,31 +20,28 @@ $(".searchBtn").on("click", function() {
 
     var newCity = userSearchP.attr("data-city");
 
-    userSearchP.text(userSearch);
-
     if (userSearchArray.includes(newCity)) {
-        console.log('test')
         }
 
     else {
         $("#search-history").append(userSearchP);
+        userSearchArray.push(newCity);
+        storeSearchHistory();
         }
     
-    userSearchArray.push(newCity);
-
     getWeatherData(userSearch);
     storeLastSearch();
+    $("#userSearch").val("");
   }
 
 });
 
-// Post weather data if user clicks on search history button
+// Show weather data for appropriate city if user clicks on search history button
 $("#search-history").on("click", ".searchHistoryBtn", function() {
   var userSearch = $(this).attr("data-city");
   getWeatherData(userSearch);
   console.log('test')
 });
-
 
 // Store the users last search to localStorage
 function storeLastSearch() {
@@ -52,17 +49,31 @@ function storeLastSearch() {
   localStorage.setItem("lastSearch", JSON.stringify(userSearch));
 };
 
-// Post weather data for last userSearch to the page
+// Store user search history to localStorage
+function storeSearchHistory() {
+  localStorage.setItem("searchHistory", JSON.stringify(userSearchArray))
+};
+
+// Show weather data for last userSearch and re-append user history
 function init() {
-  var userSearch = JSON.parse(localStorage.getItem("lastSearch"));
+  var lastSearch = JSON.parse(localStorage.getItem("lastSearch"));
+  var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
 
   if (userSearch !== null) {
-    getWeatherData(userSearch);
+    getWeatherData(lastSearch);
   }
 
   else if (userSearch === null) {
 
   };
+
+  for (var i=0; i<searchHistory.length; i++) {
+    var userSearchP = $("<button>" + searchHistory[i] + "</button>");
+    userSearchP.attr("data-city", searchHistory[i]);
+    userSearchP.addClass("searchHistoryBtn btn btn-outline-primary");
+    $("#search-history").append(userSearchP);
+    userSearchArray.push(searchHistory[i])
+  }
 };
 
 // Generate the weather data
@@ -130,8 +141,6 @@ function getWeatherData(userSearch) {
 };
 
 init();
-
-
 
 
 /*
