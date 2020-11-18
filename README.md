@@ -1,6 +1,6 @@
 # weather-quick-look-app
 
-## Description of Work Completed
+### Description of Work Completed
 
 The Weather Quick Look app allows a user to search weather data by city by using the [Open Weather Map API](https://openweathermap.org/api).  The user can see the current weather in the city searched for, as well as a 5-day forecast in a clean, simple layout.  The user's search history will appear on the left-hand side of the page.  When the user re-visits the page, the weather data for their last search will populate and their search history will be up to date, with the data being pulled from localStorage.  
   
@@ -31,11 +31,11 @@ Here's a quick look at what this app can do.
 
 ### Installation
 
-If you want to check out this app's features on your local machine, check out [Github's documentation on forking a repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo). 
+If you want to check out this app's features on your local machine, check out [Github's documentation on forking a repository](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo).  Also, you will need to get an API key from [Open Weather Map](https://openweathermap.org/api).  My API key is a free version so I only get so many API calls; thanks for helping keep my site live!
 
 ### Links
-* [GitHub Pages](https://team-norm-1.github.io/project-1/)
-* [GitHub Repository](https://github.com/Team-Norm-1/project-1)
+* [GitHub Pages](https://emblair96.github.io/weather-quick-look-app/)
+* [GitHub Repository](https://github.com/emblair96/weather-quick-look-app)
 
 ### License
 Copyright (c) 2020 Emily Blair.  
